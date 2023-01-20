@@ -50,29 +50,29 @@ export default {
 }
 </script>
 
-<style scoped lang="scss" media="all">
-.list-default{
+<style scoped lang="scss">
+.list-default {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  @media (max-width: 990px) {
-    .href{
-     font-size: 10px;
-    }
-    .cols{
-     font-size: 10px;
-    }
-    .li_img_head{
-      width: 150px;
-    }
-    .cols_num{
-     font-size: 10px;
-    }
-    .cols_lang{
-      font-size: 10px;
-    }
+  justify-content: space-between;
+  //@media (max-width: 990px) {
+  //  .href{
+  //   font-size: 10px;
+  //  }
+  //  .cols{
+  //   font-size: 10px;
+  //  }
+  //  .li_img_head{
+  //    width: 150px;
+  //  }
+  //  .cols_num{
+  //   font-size: 10px;
+  //  }
+  //  .cols_lang{
+  //    font-size: 10px;
+  //  }
+  //}
 }
-  }
 .li_img{
   width: 216px;
   height: 66px;

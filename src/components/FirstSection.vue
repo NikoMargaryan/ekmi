@@ -8,8 +8,12 @@
           <p>ЛУЧШАЯ ЖИЗНЬ,
             СОЗДАННАЯ ДЛЯ ВАС!</p>
       </div>
+      <button type="button" class="button_first" >
+      перейти в КАталог
+      </button>
       <div class="slider">
             <agile class="agile" :dots="true" :autoplaySpeed="3000" :mobileFirst="true" :navButtons="false" >
+
               <div class="slide">
                 <div class="png">
                   <img src="../assets/10000_Post01.png" alt="pictue">
@@ -32,9 +36,7 @@
 
             </agile>
       </div>
-          <button type="button" class="button" >
-            перейти в КАталог
-          </button>
+
 
     </div>
   </div>
@@ -55,7 +57,7 @@ export default {
 }
 </script>
 
-<style lang="scss" media="all" scoped>
+<style lang="scss" >
 
 .agile {
 
@@ -142,7 +144,7 @@ export default {
 //  left: 435px;
 //  top: 211px;
 //}
-.button{
+.button_first{
   position: absolute;
   width: 209.54px;
   height: 43px;

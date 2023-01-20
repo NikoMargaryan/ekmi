@@ -22,7 +22,7 @@ export default {
 }
 </script>
 
-<style lang="scss" media="all" scoped>
+<style lang="scss" >
 .news{
   position: absolute;
   height: 39px;
