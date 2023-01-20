@@ -1,28 +1,28 @@
 <template>
   <header>
-    <div class="container">
-    <ul class="list-default">
-      <li class="cols"> <a class="href" href=""> Каталог</a> </li>
-      <li class="cols"> <a class="href" href=""> Индивидуальная мебель </a>  </li>
-      <li class="cols"> <a class="href" href=""> Контакты </a></li>
-       <li class="li_img"> <a href="http://localhost:8080/" ><img class="li_img_head" src="../assets/telegram-cloud-document-2-5233443011957888024 1.png" alt="logo"> </a> </li>
-      <li class="cols"> <a class="href" href="http://localhost:8080/about"> О компании </a> </li>
-      <li class="cols_num"> <a class="href" href="tel: +38 (099)-638-45-37"> +38 (099)-638-45-37 </a> </li>
-      <li class="cols_select">
-        <label for="language">
-        <select id="language" class="cols_lang">
-          <option
-              v-for="(language,index) in languages"
-              :key="index"
-              value="language.value"
-          >
-            {{language.value}}
-          </option>
-      </select>
-        </label>
-      </li>
-    </ul>
-    </div>
+    <nav>
+        <ul class="list-default">
+          <li class="cols"> <a class="href" href=""> Каталог</a> </li>
+          <li class="cols"> <a class="href" href=""> Индивидуальная мебель </a>  </li>
+          <li class="cols"> <a class="href" href=""> Контакты </a></li>
+           <li class="li_img"> <a href="http://localhost:8080/" ><img class="li_img_head" src="../assets/telegram-cloud-document-2-5233443011957888024 1.png" alt="logo"> </a> </li>
+          <li class="cols"> <a class="href" href="http://localhost:8080/about"> О компании </a> </li>
+          <li class="cols_num"> <a class="href" href="tel: +38 (099)-638-45-37"> +38 (099)-638-45-37 </a> </li>
+          <li class="cols_select">
+            <label for="language">
+            <select id="language" class="cols_lang">
+              <option
+                  v-for="(language,index) in languages"
+                  :key="index"
+                  value="language.value"
+              >
+                {{language.value}}
+              </option>
+          </select>
+            </label>
+          </li>
+        </ul>
+    </nav>
   </header>
 </template>
 
@@ -53,25 +53,11 @@ export default {
 <style scoped lang="scss">
 .list-default {
   display: flex;
+  margin: 0 auto;
+  max-width: 1170px;
   flex-direction: row;
   justify-content: space-between;
-  //@media (max-width: 990px) {
-  //  .href{
-  //   font-size: 10px;
-  //  }
-  //  .cols{
-  //   font-size: 10px;
-  //  }
-  //  .li_img_head{
-  //    width: 150px;
-  //  }
-  //  .cols_num{
-  //   font-size: 10px;
-  //  }
-  //  .cols_lang{
-  //    font-size: 10px;
-  //  }
-  //}
+  padding-bottom: 35px;
 }
 .li_img{
   width: 216px;

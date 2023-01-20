@@ -1,42 +1,47 @@
 <template>
-  <div class="conatiner">
-    <div class="main">
-      <div class="first_writing">
-        <p >Основано в 1993 году</p>
+  <div class="main">
+  <div class="container">
+      <div class="flex_one">
+        <div class="second_writing">
+            <p>ЛУЧШАЯ ЖИЗНЬ,
+              СОЗДАННАЯ ДЛЯ ВАС!</p>
+        </div>
+
+        <button type="button" class="button_first" >
+          перейти в КАталог
+        </button>
+
       </div>
-      <div class="second_writing">
-          <p>ЛУЧШАЯ ЖИЗНЬ,
-            СОЗДАННАЯ ДЛЯ ВАС!</p>
-      </div>
-      <button type="button" class="button_first" >
-      перейти в КАталог
-      </button>
-      <div class="slider">
-            <agile class="agile" :dots="true" :autoplaySpeed="3000" :mobileFirst="true" :navButtons="false" >
+      <div class="flex_sec">
+        <div class="first_writing">
+          <p >Основано в 1993 году</p>
+        </div>
+        <div class="slider">
+              <agile class="agile" :dots="true" :autoplaySpeed="3000" :mobileFirst="true" :navButtons="false" >
 
-              <div class="slide">
-                <div class="png">
-                  <img src="../assets/10000_Post01.png" alt="pictue">
-                </div>
-              </div>
-
-              <div class="slide">
-                <div class="png">
-                  <img src="../assets/Ampir2.png" alt="pictue">
-                </div>
-
-              </div>
-              <div class="slide">
-
-                <div class="png">
-                  <img src="../assets/Leon2.png" alt="pictue">
+                <div class="slide">
+                  <div class="png">
+                    <img src="../assets/10000_Post01.png" alt="pictue">
+                  </div>
                 </div>
 
-              </div>
+                <div class="slide">
+                  <div class="png">
+                    <img src="../assets/Ampir2.png" alt="pictue">
+                  </div>
 
-            </agile>
+                </div>
+                <div class="slide">
+
+                  <div class="png">
+                    <img src="../assets/Leon2.png" alt="pictue">
+                  </div>
+
+                </div>
+
+              </agile>
+        </div>
       </div>
-
 
     </div>
   </div>
@@ -92,35 +97,44 @@ export default {
 
 
 }
-
 .main{
+
   height: 590px;
   display:flex;
   background: #CCB2A3;
 }
+.container{
+  max-width: 1170px;
+  display:flex;
+  gap: 10px;
+}
+.flex_one{
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  justify-content: center;
+}
+.flex_sec{
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
 .first_writing{
   height: 25px;
-  left: 1100px;
-  top: 151px;
-  position: absolute;
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 127.5%;
   /* or 25px */
-
+  padding-top: 15px;
   display: flex;
-  align-items: center;
-
+  justify-content: flex-end;
   color: #FFFFFF;
 }
 .second_writing{
-  position: absolute;
   height: 184px;
   width: 270px;
-  left: 135px;
-  top: 290px;
 
 
   font-family: 'Raleway';
@@ -145,11 +159,8 @@ export default {
 //  top: 211px;
 //}
 .button_first{
-  position: absolute;
   width: 209.54px;
   height: 43px;
-  left: 134px;
-  top: 534px;
 
   background: #5B5B5B;
   display: flex;
@@ -168,11 +179,9 @@ export default {
 }
 
 .slider{
-  position: absolute;
+
   height: 617px;
   width: 870px;
-  left: 435px;
-  top: 211px;
 
 }
 </style>
