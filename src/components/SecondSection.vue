@@ -1,16 +1,41 @@
 <template>
-  <div class="container">
-    <div class="new_slider">
-      <div class="news">
-        <p>Новинки</p>
-      </div>
-      <div class="slider_middle">
+  <div class="main_second">
+    <div class="container">
+      <div class="new_slider">
+        <div class="news">
+          <p>Новинки</p>
+        </div>
+<!--        :dots="true"-->
+        <div class="slider_middle">
+          <agile  :autoplaySpeed="3000" :mobileFirst="true" :navButtons="true" :fade="true" >
 
-      </div>
-      <div class="btn">
-        <button type="button" class="button" >
-          перейти в КАталог
-        </button>
+            <div class="slide">
+              <div class="png">
+                <img class="png_image" src="../assets/10000_Post01.png" alt="pictue">
+              </div>
+            </div>
+
+            <div class="slide">
+              <div class="png">
+                <img class="png_image" src="../assets/Ampir2.png" alt="pictue">
+              </div>
+
+            </div>
+            <div class="slide">
+
+              <div class="png">
+                <img class="png_image" src="../assets/Leon2.png" alt="pictue">
+              </div>
+
+            </div>
+
+          </agile>
+        </div>
+        <div class="button_first">
+          <button type="button" class="button_cat" >
+            перейти в КАталог
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -23,59 +48,39 @@ export default {
 </script>
 
 <style lang="scss" >
+.main_second .agile{
+  .agile__actions{
+    margin: 2.5% 0 0 0;
+  }
+}
+
+.main_second{
+  padding-top: 10.4166666667vw;
+}
+.container{
+  max-width: 81.25%;
+  margin: 0 auto;
+  padding-top: 10.416666666666666vw;
+}
 .news{
-  position: absolute;
-  height: 39px;
-  width: 152px;
-  left: 135px;
-  top: 1020.908203125px;
-
-
-
-  display: flex;
-  align-items: center;
+  padding-top: 2.734375vw;
+  //height: ;
+  //width: ;
+  //display: flex;
+  //align-items: center;
 }
 .news p{
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 700;
-  font-size: 35px;
+  font-size:  2.278vw;
   line-height: 110%;
   /* identical to box height, or 39px */
 }
 .slider_middle{
-  width: 1063px;
-  height: 423px;
-  position: absolute;
-  left: 185px;
-  top: 1069.908203125px;
-  background-color: #2c3e50;
+  //width: ;
+  //height: ;
+  //
 }
-.btn{
-  padding-top: 20px;
-}
-.button{
-    position: absolute;
-    height: 43px;
-    width: 209.5416717529297px;
-    left: 615px;
-    top: 1547.908203125px;
-    border-radius: 0px;
 
-
-    background: #5B5B5B;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Raleway', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 150%;
-    /* or 24px */
-
-
-    text-transform: uppercase;
-    color: #FFFFFF;
-}
 </style>

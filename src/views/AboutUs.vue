@@ -1,165 +1,142 @@
 <template>
   <div class="about">
-    <section>
-      <div class="conatiner">
-        <div class="first">
-          <div class="history">
-            <p class="p_history">
-              Наша история
-            </p>
+      <div class="container_sec_2">
+        <div class="history">
+          <h2 class="p_history">
+            Наша история
+          </h2>
+        </div>
+          <div class="first">
+                <div class="box">
+                  <div class="div_1">
+                    <h3 class="h_box">
+                      Наработки длинной в 25 лет
+                    </h3>
+                  </div>
+                  <div class="div_2">
+                    <p class="p_box">
+                      Каждый производитель заявляет, что делает все для своих покупателей, но не каждый производитель способен подтвердить свои заявления многолетней историей
+                    </p>
+                  </div>
+                </div>
           </div>
-            <div class="bcg_img">
-              <img src="../assets/Босфор1.png" alt="PNG">
+        <div class="second">
+          <div class="sec_flex">
+            <div>
+              <p class="p_sec">1993</p>
             </div>
-              <div class="box">
-                <h3 class="h_box">
-                  Наработки длинной в 25 лет
-                </h3>
-                  <p class="p_box">
-                    Каждый производитель заявляет, что делает все для своих покупателей, но не каждый производитель способен подтвердить свои заявления многолетней историей
-                  </p>
-              </div>
-        </div>
-      </div>
-      </section>
-    <footer>
-      <div class="second">
-        <div class="sec_flex">
-          <div>
-            <p class="p_sec">1993</p>
-          </div>
-          <div>
-            <p class="p_big">25 лет </p>
-          </div>
-          <div>
-            <p class="p_sec">2021</p>
+            <div>
+              <p class="p_big">25 лет </p>
+            </div>
+            <div>
+              <p class="p_sec">2021</p>
+            </div>
           </div>
         </div>
       </div>
-    </footer>
 
 
   </div>
 </template>
 
  <style lang="scss">
- .container{
-   width:1170px;
+ .about{
+   //margin: 0 auto;
  }
-.history {
-  position: absolute;
-  width: 256px;
-  height: 37px;
-  left: 126px;
-  top: 175px;
-
+ .container_sec_2{
+   max-width: 81.25%;
+   margin: 0 auto;
+ }
+ .history{
+   width: 16.6vw;
+ }
+.p_history {
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 700;
-  font-size: 35px;
+  font-size: 2.27vw;
   line-height: 150%;
   /* or 52px */
-
-  display: flex;
-  align-items: center;
-
   color: #343434;
 }
 .p_history:hover{
   color: #FF9619;
 }
-.bcg_img{
-  position: absolute;
-  width: 800px;
-  height: 543px;
-  left: 505px;
-  top: 225px;
-}
-.box{
-  position: absolute;
-  width: 538px;
-  height: 247px;
-  left: 126px;
-  top: 290px;
-
-  background: #5B5B5B;
+.first{
+  display: flex;
+  flex-direction: row;
+  padding-top: 5.2vw;
 }
 .h_box{
-  position: absolute;
-  height: 25px;
-  left: 42px;
-  top: 51px;
-
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 1.30vw;
   line-height: 125%;
   /* identical to box height, or 25px */
-
-  display: flex;
-  align-items: center;
   letter-spacing: 0.1em;
-
   color: #FFFFFF;
-
 }
 .p_box{
-  position: absolute;
-  height: 96px;
-  width: 454px;
-  left: 42px;
-  top: 114px;
-
-
   font-family: 'Raleway', sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 1.17vw;
   line-height: 135%;
   /* or 24px */
-
-  display: flex;
-  align-items: center;
   letter-spacing: 0.1em;
 
   color: #FFFFFF;
 }
-.second{
-  position: relative;
-  left: -45px;
-  top: 700px;
+ .bcg_1{
+   width:  52.08vw;
+   //height: 35.35px;
+ }
+ .bcg_img{
+   width:  52.08vw;
+   height: 35.35vw;
+ }
+ .box{
+   padding: 3.25vw 2.73vw;
+   background: #5B5B5B;
+   max-width: 35.02vw;
+   height: 16.08vw;
+   position: relative;
+ }
+ .box::before{
+   background-image: url(http://localhost:8081/img/%D0%91%D0%BE%D1%81%D1%84%D0%BE%D1%801.0a6d1d0c.png);
+   content: "";
+   position: absolute;
+   width: 52.08vw;
+   height: 35.35vw;
+   z-index: -1;
+   top: -4.29vw;
+   left: 24.08vw;
+   background-size: cover;
+ }
+ .second{
+  padding-top: 20.18vw;
 }
 .sec_flex{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 .p_sec{
-  height: 32px;
-  width: 53.549224853515625px;
-  top: 800px;
-
-
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 300;
-  font-size: 25px;
+  font-size: 1.62vw;
   line-height: 127.5%;
   /* identical to box height, or 32px */
-
-  display: flex;
-  align-items: center;
-
   color: #343434;
-
 }
 .p_big{
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 600;
-  font-size: 144px;
+  font-size: 9.375vw;
   line-height: 150%;
   /* or 216px */
 
@@ -168,14 +145,31 @@
 
   color: rgba(90, 90, 90, 0.1);
 }
- @media screen and (max-width: 540px) {
-
- }
- @media screen and (max-width: 440px) {
-
- }
-
- @media screen and (max-width: 390px) {
-
+ @media screen and (min-width: 1440px){
+   .container_sec_2{
+     max-width: 1170px;
+     margin: 0 auto;
+   }
+   .box{
+     width: 538px;
+     height: 247px;
+     padding: 50px 42px;
+     position: relative;
+   }
+   .box::before{
+     Width: 800px;
+     Height: 543px;
+     left: 370px;
+     position: absolute;
+   }
+   .h_box{
+     font-size: 20px;
+   }
+   .p_box{
+     font-size: 18px;
+   }
+   .second{
+     padding-top: 310px;
+   }
  }
  </style>

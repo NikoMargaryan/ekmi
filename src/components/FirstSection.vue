@@ -1,50 +1,52 @@
 <template>
-  <div class="main">
-  <div class="container">
-      <div class="flex_one">
-        <div class="second_writing">
-            <p>ЛУЧШАЯ ЖИЗНЬ,
+  <section class="main">
+    <div class="container_section">
+      <div class="flex_cont">
+        <div class="flex_one">
+          <div class="second_writing">
+            <p class="writing">ЛУЧШАЯ ЖИЗНЬ,
               СОЗДАННАЯ ДЛЯ ВАС!</p>
+          </div>
+            <div class="button_first">
+              <button type="button" class="button_cat" >
+                перейти в КАталог
+              </button>
+            </div>
         </div>
+        <div class="flex_sec">
+          <div class="first_writing">
+            <p >Основано в 1993 году</p>
+          </div>
+          <div class="slider">
+            <agile :dots="true" :autoplaySpeed="3000" :mobileFirst="true" :navButtons="false" :fade="true" >
 
-        <button type="button" class="button_first" >
-          перейти в КАталог
-        </button>
+              <div class="slide">
+                <div class="png">
+                  <img class="png_image" src="../assets/10000_Post01.png" alt="pictue">
+                </div>
+              </div>
+
+              <div class="slide">
+                <div class="png">
+                  <img class="png_image" src="../assets/Ampir2.png" alt="pictue">
+                </div>
+
+              </div>
+              <div class="slide">
+
+                <div class="png">
+                  <img class="png_image" src="../assets/Leon2.png" alt="pictue">
+                </div>
+
+              </div>
+
+            </agile>
+          </div>
+        </div>
 
       </div>
-      <div class="flex_sec">
-        <div class="first_writing">
-          <p >Основано в 1993 году</p>
-        </div>
-        <div class="slider">
-              <agile class="agile" :dots="true" :autoplaySpeed="3000" :mobileFirst="true" :navButtons="false" >
-
-                <div class="slide">
-                  <div class="png">
-                    <img src="../assets/10000_Post01.png" alt="pictue">
-                  </div>
-                </div>
-
-                <div class="slide">
-                  <div class="png">
-                    <img src="../assets/Ampir2.png" alt="pictue">
-                  </div>
-
-                </div>
-                <div class="slide">
-
-                  <div class="png">
-                    <img src="../assets/Leon2.png" alt="pictue">
-                  </div>
-
-                </div>
-
-              </agile>
-        </div>
-      </div>
-
     </div>
-  </div>
+  </section>
 </template>
 
 
@@ -61,15 +63,15 @@ export default {
 
 }
 </script>
-
+<!--media="screen"-->
 <style lang="scss" >
 
-.agile {
+.main .agile {
 
   .agile__actions{
-    margin: 2.5% 0px 0px 0px;
+    margin: 2.5% 0 0 0;
     .agile__dots{
-      gap: 10px;
+      gap: 0.65vw;
       .agile__dot{
         border: none;
         border-radius: 50%;
@@ -81,7 +83,7 @@ export default {
         }
 
         button{
-          padding: 7px;
+          padding: 0.45vw;
           background-color: transparent;
           border: none;
           border-radius: 50%;
@@ -98,90 +100,113 @@ export default {
 
 }
 .main{
-
-  height: 590px;
-  display:flex;
+  //max-height: 51.6vw;
+  //height: 100%;
+  //position: relative;
   background: #CCB2A3;
+  width: 100%;
+  height: 38.41vw;
 }
-.container{
-  max-width: 1170px;
+//.main::before{
+//  //z-index: -1;
+//  //height: 79%;
+//  content: '';
+//  //top: 0;
+//  //left: 0;
+//  position: absolute;
+//}
+.container_section{
+  max-width: 81.25%;
+  margin: 0 auto;
+}
+.flex_cont{
   display:flex;
-  gap: 10px;
 }
 .flex_one{
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 3.9vw;
   justify-content: center;
 }
 .flex_sec{
   display: flex;
   flex-direction: column;
-  gap: 35px;
+  gap: 2.27vw;
 }
 .first_writing{
-  height: 25px;
+  height: 1.62vw;
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 1.4vw;
   line-height: 127.5%;
   /* or 25px */
-  padding-top: 15px;
-  display: flex;
-  justify-content: flex-end;
+  padding-top: 0.97vw;
+  text-align: end;
   color: #FFFFFF;
 }
 .second_writing{
-  height: 184px;
-  width: 270px;
-
-
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 42px;
-  line-height: 110%;
-  /* or 46px */
+  height: 11.97vw;
+  width: 18.75vw;
 
   display: flex;
   align-items: center;
   text-transform: capitalize;
 
-  color: #FF9619;
-
 }
-//.png{
-//  position: absolute;
-//  width: 800px;
-//  height: 617px;
-//  left: 435px;
-//  top: 211px;
-//}
+.writing{
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2.73vw;
+  line-height: 110%;
+  color: #FF9619;
+}
 .button_first{
-  width: 209.54px;
-  height: 43px;
-
+  //sans-serif;
+}
+.button_cat{
   background: #5B5B5B;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway';
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
   line-height: 150%;
   /* or 24px */
-
-
+  font-size: 1.04vw;
+  padding:  0.9vw 1.4vw;
   text-transform: uppercase;
   color: #FFFFFF;
 }
 
 .slider{
+  width: 56.6vw;
+}
+.png_image{
+  width: 56.6vw;
+  height: 40.16vw;
+}
+@media screen and (min-width: 1440px) {
+  .container_section{
+    max-width: 1170px;
+    padding-top: 25px;
+  }
+  .flex_cont{
+    gap:35px;
+    padding: 0;
+  }
+  .first_writing{
+    font-size: 20px;
+  }
+  .writing{
+    font-size: 42px;
+  }
+  .button_cat{
+    padding: 14px 21px;
+    font-size: 16px;
+  }
+}
 
-  height: 617px;
-  width: 870px;
+@media screen and (max-width: 1024px){
 
 }
 </style>
