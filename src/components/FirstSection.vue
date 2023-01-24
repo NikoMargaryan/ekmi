@@ -18,28 +18,13 @@
             <p >Основано в 1993 году</p>
           </div>
           <div class="slider">
-            <agile :dots="true" :autoplaySpeed="3000" :mobileFirst="true" :navButtons="false" :fade="true" >
+            <agile :dots="true" :autoplay="true" :autoplaySpeed="2500" :mobileFirst="true" :navButtons="false" :fade="true" >
 
-              <div class="slide">
+              <div class="slide" v-for="img in imgs">
                 <div class="png">
-                  <img class="png_image" src="../assets/10000_Post01.png" alt="pictue">
+                  <img class="png_image" :src=img.pic alt="pictue">
                 </div>
               </div>
-
-              <div class="slide">
-                <div class="png">
-                  <img class="png_image" src="../assets/Ampir2.png" alt="pictue">
-                </div>
-
-              </div>
-              <div class="slide">
-
-                <div class="png">
-                  <img class="png_image" src="../assets/Leon2.png" alt="pictue">
-                </div>
-
-              </div>
-
             </agile>
           </div>
         </div>
@@ -59,6 +44,21 @@ export default {
   name: "FirstSection",
   components: {
     agile: VueAgile
+  },
+  data(){
+    return{
+      imgs:[
+        {
+          pic: "/assets/10000_Post01.png",
+        },
+        {
+          pic: "/assets/Ampir2.png",
+        },
+        {
+          pic: "/assets/Leon2.png",
+        }
+      ]
+    }
   }
 
 }
@@ -100,21 +100,11 @@ export default {
 
 }
 .main{
-  //max-height: 51.6vw;
-  //height: 100%;
-  //position: relative;
   background: #CCB2A3;
-  width: 100%;
+  //width: 93.75vw;
   height: 38.41vw;
 }
-//.main::before{
-//  //z-index: -1;
-//  //height: 79%;
-//  content: '';
-//  //top: 0;
-//  //left: 0;
-//  position: absolute;
-//}
+
 .container_section{
   max-width: 81.25%;
   margin: 0 auto;
@@ -135,7 +125,7 @@ export default {
 }
 .first_writing{
   height: 1.62vw;
-  font-family: 'Raleway';
+  font-family: 'Raleway',sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 1.4vw;
@@ -155,7 +145,7 @@ export default {
 
 }
 .writing{
-  font-family: 'Raleway';
+  font-family: 'Raleway',sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 2.73vw;
@@ -166,8 +156,9 @@ export default {
   //sans-serif;
 }
 .button_cat{
-  background: #5B5B5B;
-  font-family: 'Raleway';
+
+  background: #FF9619;
+  font-family: 'Raleway',sans-serif;
   font-style: normal;
   font-weight: 700;
   line-height: 150%;
@@ -177,7 +168,10 @@ export default {
   text-transform: uppercase;
   color: #FFFFFF;
 }
-
+.button_cat:hover{
+  background: #5B5B5B;
+  color: #FFFFFF;
+}
 .slider{
   width: 56.6vw;
 }
@@ -186,16 +180,36 @@ export default {
   height: 40.16vw;
 }
 @media screen and (min-width: 1440px) {
-  .container_section{
-    max-width: 1170px;
-    padding-top: 25px;
+  .main{
+    height: 590px;
   }
+  .container_section{
+    width: 1170px;
+    margin: 0 auto;
+  }
+  .flex_one{
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     padding-bottom: 145px;
+   }
   .flex_cont{
     gap:35px;
     padding: 0;
+    display: flex;
+  }
+  .flex_sec{
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
   }
   .first_writing{
     font-size: 20px;
+    text-align: end;
+  }
+  .second_writing{
+    height: 184px;
+    width: 270px;
   }
   .writing{
     font-size: 42px;
@@ -204,9 +218,53 @@ export default {
     padding: 14px 21px;
     font-size: 16px;
   }
+  .slider{
+    width: 870px;
+  }
+  .png_image{
+    width: 870px;
+    height: 617px;
+  }
+}
+@media screen and (max-width: 1440px){
+  .container_section{
+    width: 1170px;
+    margin: 0 auto;
+  }
+  .flex_cont{
+    gap: 55px;
+  }
+}
+@media screen and (max-width: 980px){
+  .flex_cont{
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 540px){
+  .flex_cont{
+    gap: 25px;
+  }
 }
 
-@media screen and (max-width: 1024px){
 
-}
 </style>
+
+
+
+
+
+
+
+
+
+//.main::before{
+//  z-index: -1;
+//  height: 79%;
+//  content: '';
+//  top: 0;
+//  left: 0;
+//  position: absolute;
+//}
+//max-height: 51.6vw;
+//height: 100%;
+//position: relative;

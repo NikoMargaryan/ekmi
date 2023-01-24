@@ -51,7 +51,7 @@
    width: 16.6vw;
  }
 .p_history {
-  font-family: 'Raleway';
+  font-family: 'Raleway', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 2.27vw;
@@ -68,7 +68,7 @@
   padding-top: 5.2vw;
 }
 .h_box{
-  font-family: 'Raleway';
+  font-family: 'Raleway', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 1.30vw;
@@ -104,7 +104,7 @@
    position: relative;
  }
  .box::before{
-   background-image: url(http://localhost:8081/img/%D0%91%D0%BE%D1%81%D1%84%D0%BE%D1%801.0a6d1d0c.png);
+   background-image: url("../assets/Босфор1.png");
    content: "";
    position: absolute;
    width: 52.08vw;
@@ -113,6 +113,15 @@
    top: -4.29vw;
    left: 24.08vw;
    background-size: cover;
+ }
+ .box::after{
+   content: "";
+   position: absolute;
+   top: 14.32vw;
+   left: 23.95vw;
+   width: 6.57vw;
+   height: 3.58vw;
+   background-color: #FF9619;
  }
  .second{
   padding-top: 20.18vw;
@@ -124,7 +133,7 @@
   align-items: center;
 }
 .p_sec{
-  font-family: 'Raleway';
+  font-family: 'Raleway', sans-serif;
   font-style: normal;
   font-weight: 300;
   font-size: 1.62vw;
@@ -133,7 +142,7 @@
   color: #343434;
 }
 .p_big{
-  font-family: 'Raleway';
+  font-family: 'Raleway', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 9.375vw;
@@ -159,8 +168,15 @@
    .box::before{
      Width: 800px;
      Height: 543px;
-     left: 370px;
      position: absolute;
+     top: -66px;
+     left: 370px;
+   }
+   .box::after{
+     width: 101px;
+     height: 55px;
+     left: 361px;
+     top: 220px;
    }
    .h_box{
      font-size: 20px;
@@ -168,8 +184,26 @@
    .p_box{
      font-size: 18px;
    }
+   .p_sec{
+     font-size: 25px;
+   }
+   .p_big{
+     font-size: 144px;
+   }
+   .history{
+     width: 256px;
+   }
+   .p_history{
+     font-size: 35px;
+   }
    .second{
      padding-top: 310px;
    }
  }
+ //@media screen and (max-width: 1300px){
+ //  .box::after{
+ //    position:absolute;
+ //
+ //  }
+ //}
  </style>

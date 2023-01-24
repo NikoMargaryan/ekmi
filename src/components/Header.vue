@@ -10,15 +10,16 @@
           <li class="cols_num"> <a class="href" href="tel: +38 (099)-638-45-37"> +38 (099)-638-45-37 </a> </li>
           <li class="cols_select">
             <label for="language">
-            <select id="language" class="cols_lang">
-              <option
-                  v-for="(language,index) in languages"
-                  :key="index"
-                  value="language.value"
-              >
-                {{language.value}}
-              </option>
-          </select>
+              <select id="language" class="cols_lang">
+                <option
+                    v-for="(language,index) in languages"
+                    :key="index"
+                    value="language.value"
+                    class="cols_lang_option"
+                >
+                  {{language.value}}
+                </option>
+              </select>
             </label>
           </li>
         </ul>
@@ -70,7 +71,7 @@ nav{
   width: 15vw;
 }
 .cols{
-  font-family: 'Raleway';
+  font-family: 'Raleway',sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 0.9vw;
@@ -90,7 +91,7 @@ nav{
   text-decoration: none;
 }
 .cols_num{
-  font-family: 'Open Sans';
+  font-family: 'Open Sans',sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 0.9vw;
@@ -115,18 +116,19 @@ label{
   margin: 0;
 }
 .cols_lang{
-  /*height: 11px;*/
-  /*width: 20.08969497680664px;*/
+  border: 0;
+}
+.cols_lang_option{
+  height: 0.716vw;
+  width:  1.307vw;
 
-  font-family: 'Raleway';
+  font-family: 'Raleway',sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 0.9vw;
   line-height: 150%;
   /* or 20px */
 
-  display: flex;
-  align-items: center;
   border:0;
   color: rgba(52, 52, 52, 0.7);
 }
@@ -143,8 +145,20 @@ label{
   .li_img_head{
     width: initial;
   }
+  .cols_lang{
+    font-size: 13px;
+  }
 }
-
+@media screen and (max-width: 1440px) {
+  .cols_lang_option{
+    font-size: 13px;
+    height: 11px;
+    width:  20px;
+  }
+  label{
+    font-size: 13px;
+  }
+}
 
 
 </style>
