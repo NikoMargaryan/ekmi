@@ -5,7 +5,6 @@
         <div class="news">
           <h2><span>Н</span>овинки</h2>
         </div>
-<!--&lt;!&ndash;        :dots="true"&ndash;&gt;-->
         <div class="slider_middle">
           <div class="prev"> <img src="/assets/Vector112.jpg" @click="$refs.carousel.goToPrev()" alt="previous picture"></div>
             <agile ref="carousel"  :mobile-first="true" :autoplay="true" :pause-on-hover="true"  :autoplaySpeed="3000" :center-mode="true" :navButtons="false" :dots="false"  :slides-to-show="3">
@@ -75,7 +74,7 @@ export default {
 
 <style lang="scss" scoped>
 .main_second .agile{
-  max-width: 1060px;
+  max-width: 69.01vw;
   padding-top: 3.97vw;
   .agile__slide{
     width: 256px;
@@ -92,7 +91,6 @@ export default {
 .container_second{
   max-width: 81.5%;
   margin: 0 auto;
-  //padding-top: 10.416666666666666vw;
 }
 .news{
   padding-top: 2.734375vw;
@@ -112,18 +110,11 @@ export default {
 .slider_middle{
   padding:  5.20vw 3.9vw;
   height:  33.07vw;
+  //padding:  80px 60px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
-//.slider_sec{
-//  text-align: center;
-//  img {
-//    margin: auto;
-//    width: 200px;
-//    height: 100px;
-//    background-image: linear-gradient(gray 100%, transparent 0);
-//  }
-//}
 .png_img{
   width: 16.53vw;
   height: 16.6vw;
@@ -181,5 +172,66 @@ export default {
 .button_sec:hover{
   background: #5B5B5B;
   color: #FFFFFF;
+}
+@media screen and (min-width: 1400px){
+  .main_second .agile{
+    max-width: 1060px;
+    padding-top: 60px;
+  }
+  .main_second{
+    padding: 160px 0 83px 30px;
+  }
+  .container_second{
+    max-width: 1173px;
+    margin: 0 auto;
+  }
+  .news h2{
+    font-size: 35px;
+    span{
+      font-size: 35px;
+    }
+  }
+  .slider_middle{
+    padding:  80px 60px;
+    height:  507px;
+    box-sizing: content-box;
+  }
+  .png_img{
+    width: 254px;
+    height: 256px;
+    padding:  11px 8px;
+  }
+  .prev{
+    width: 29.17px;
+    height: 16.09px;
+  }
+  .next{
+    width: 29.17px;
+    height: 16.09px;
+  }
+  .slider_middle_content{
+
+    h4{
+      font-size:  18px;
+      padding-top: 15px;
+    }
+    p{
+      font-size: 18px;
+    }
+  }
+  .button_sec{
+    font-size: 16px;
+    padding:  13px 21px;
+  }
+}
+@media screen and (max-width: 1000px){
+  .main_second .agile{
+    padding-top: 53px;
+  }
+}
+@media screen and (max-width: 600px){
+  .main_second .agile{
+    padding-top: 40px;
+  }
 }
 </style>
