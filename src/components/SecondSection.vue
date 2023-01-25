@@ -5,11 +5,11 @@
         <div class="news">
           <h2><span>Н</span>овинки</h2>
         </div>
-<!--&lt;!&ndash;        :dots="true"&ndash;&gt;:autoplay="true"-->
+<!--&lt;!&ndash;        :dots="true"&ndash;&gt;-->
         <div class="slider_middle">
           <div class="prev"> <img src="/assets/Vector112.jpg" @click="$refs.carousel.goToPrev()" alt="previous picture"></div>
-            <agile ref="carousel"  :mobile-first="true"  :pause-on-hover="true"  :autoplaySpeed="3000" :center-mode="true" :navButtons="false" :dots="false" :fade="true" :slides-to-show="3">
-              <div class="slider_sec" v-for="slider in sliders">
+            <agile ref="carousel"  :mobile-first="true" :autoplay="true" :pause-on-hover="true"  :autoplaySpeed="3000" :center-mode="true" :navButtons="false" :dots="false"  :slides-to-show="3">
+              <div class="slide" v-for="slider in sliders">
                 <div class="png_second_sec">
                   <img class="png_img" :src="slider.img" alt="pictue">
                 </div>
@@ -57,16 +57,16 @@ export default {
           name:"LUARA",
           price:"15000"
         },
-        // {
-        //   img:"/assets/image 41.png",
-        //   name:"TOSCANA",
-        //   price:"15000"
-        // },
-        // {
-        //   img:"/assets/image 15.png",
-        //   name:"ALBA",
-        //   price:"15000"
-        // }
+        {
+          img:"/assets/image 41.png",
+          name:"TOSCANA",
+          price:"15000"
+        },
+        {
+          img:"/assets/image 15.png",
+          name:"ALBA",
+          price:"15000"
+        }
       ]
     }
   }
@@ -76,13 +76,21 @@ export default {
 <style lang="scss" scoped>
 .main_second .agile{
   max-width: 1060px;
+  padding-top: 3.97vw;
+  .agile__slide{
+    width: 256px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 
 .main_second{
-  padding: 10.4166666667vw 0 5.4vw 0;
+  padding: 10.4166666667vw 0 5.4vw 2vw;
 }
 .container_second{
-  max-width: 83.5%;
+  max-width: 81.5%;
   margin: 0 auto;
   //padding-top: 10.416666666666666vw;
 }
@@ -119,6 +127,9 @@ export default {
 .png_img{
   width: 16.53vw;
   height: 16.6vw;
+  padding:  0.71vw  0.52vw;
+  mix-blend-mode: multiply;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
 }
 .prev img{
   width: 0.91vw;
@@ -127,6 +138,9 @@ export default {
 .next img{
   width: 0.91vw;
   height:  1.497vw;
+}
+.png_second_sec{
+  background-color: #f2f3f5;
 }
 .slider_middle_content{
   display: contents;
@@ -138,6 +152,7 @@ export default {
     //line-height: 22px;
     text-transform: uppercase;
     color: #343434;
+    padding-top: 0.97vw;
   }
     p{
       font-family: 'Open Sans',sans-serif;
