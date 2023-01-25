@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <first-section />
-    <second-section />
+<!--    <first-section />-->
+<!--    <second-section />-->
   </div>
 </template>
 

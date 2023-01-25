@@ -119,8 +119,7 @@ export default {
   width: 16.53vw;
   height: 16.6vw;
   padding:  0.71vw  0.52vw;
-  mix-blend-mode: multiply;
-  transform: matrix(-1, 0, 0, 1, 0, 0);
+  mix-blend-mode: darken;
 }
 .prev img{
   width: 0.91vw;
