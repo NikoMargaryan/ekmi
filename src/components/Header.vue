@@ -4,6 +4,16 @@
       <nav>
           <ul class="list-default">
             <li class="cols"> <a class="href" href=""> Каталог</a> </li>
+              <ul class="ul_cols">
+                <li class="li_cols"><a class="href" href="">Диваны </a></li>
+                <li class="li_cols"><a class="href" href="">Кресла </a></li>
+                <li class="li_cols"><a class="href" href="">Стулья </a></li>
+                <li class="li_cols"><a class="href" href=""> Кровати </a></li>
+                <li class="li_cols"><a class="href" href="">Матрацы </a></li>
+                <li class="li_cols"><a class="href" href=""> Пуфы </a></li>
+                <li class="li_cols"><a class="href" href="">Эксклюзивная мебель </a></li>
+                <li class="li_cols"><a class="href" href="">2D-3D модели </a></li>
+              </ul>
             <li class="cols"> <a class="href" href=""> Индивидуальная мебель </a>  </li>
             <li class="cols"> <a class="href" href=""> Контакты </a></li>
              <li class="li_img"> <router-link to="/"> <img class="li_img_head" src="../assets/telegram-cloud-document-2-5233443011957888024 1.png" alt="logo">  </router-link>  </li>
@@ -32,7 +42,7 @@
           </ul>
       </nav>
     </div>
-      <div class="mobile_version"  v-else>
+    <div class="mobile_version"  v-else>
         <div class="mobile_list">
           <div class="mob_first">
             <div class="mob_first_img">
@@ -60,28 +70,49 @@
             <div class="call">
              <a class="href" href="tel: +38 (099)-638-45-37"> <i class="fa-solid fa-phone font"> </i></a>
             </div>
-            <div class="content">
-                  <i
-                      class="fas fa-bars"
-                      @click="showMenu()">
-                  </i>
-              <div
-                  class="nav-content"
-                  :class="this.showMobileMenu ? 'open-menu' : 'closed-menu'"
-              >
-                <ul >
-                  <li>Каталог</li>
-                  <li>Диваны</li>
-                  <li>Кресла</li>
-                  <li>Стулья</li>
-                  <li>Кровати</li>
-                  <li>Матрацы</li>
-                  <li>Пуфы</li>
-                  <li>Эксклюзивная мебель</li>
-                  <li>2D-3D модели</li>
+            <div class="nav-menu">
+              <transition name="fade" mode="out-in">
+                    <i
+                        class="material-icons menu-outlined"
+                        v-if="showMenu"
+                        @click="showMenu= !showMenu"
+                        :key="menu"
+                    >
+                      close
+                    </i>
+                    <i
+                        class="material-icons close"
+                        v-else
+                        @click="showMenu= !showMenu"
+                        :key="close"
+                    >
+                      menu
+                    </i>
+              </transition>
+              <transition name="fade">
+                <ul v-if="showMenu" class="nav-items">
+                  <li class="li_nav">
+                    Каталог
+                    <ul class="ul_cat">
+                      <li class="li_cat">Диваны</li>
+                      <li class="li_cat">Кресла</li>
+                      <li class="li_cat">Стулья</li>
+                      <li class="li_cat"> Кровати</li>
+                      <li class="li_cat">Матрацы</li>
+                      <li class="li_cat"> Пуфы</li>
+                      <li class="li_cat">Эксклюзивная мебель</li>
+                      <li class="li_cat">2D-3D модели</li>
+                    </ul>
+                  </li>
+                  <li class="li_nav">Индивидуальная мебель</li>
+                  <li class="li_nav">2D-3D модели</li>
+                  <li class="li_nav">Шоу-рум</li>
+                  <li class="li_nav">СТРАНИЦА ПАРТНЕРОВ ДИЗАЙНЕРОВ</li>
+                  <li class="li_nav">Дилерам</li>
+                  <li class="li_nav">Контакты</li>
                 </ul>
-                </div>
-          </div>
+              </transition>
+            </div>
         </div>
       </div>
       </div>
@@ -97,7 +128,9 @@ export default {
       flip: '',
       currentLanguage: 'RU',
       screenSize: "",
-      showMobileMenu: false
+      showMenu: false,
+      close:'',
+      menu:'',
     }
   },
   methods:{
@@ -108,9 +141,6 @@ export default {
       }else{
         this.flip=''
       }
-    },
-    showMenu() {
-      this.showMobileMenu = !this.showMobileMenu;
     },
   },
   mounted(){
@@ -136,6 +166,41 @@ nav{
   padding-bottom: 25px;
   padding-left: 0;
   list-style-type: none;
+}
+.list-default:nth-child(1){
+  position: relative;
+}
+.list-default:nth-child(1):hover{
+  .ul_cols{
+    display: flex;
+    flex-direction: column;
+  }
+}
+.ul_cols{
+  display: none;
+  list-style-type: none;
+  width: 13.5vw;
+  position: absolute;
+  top: 47%;
+  left: 0;
+  padding-left: 0;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0.6vw 0.1vw rgba(0,0,0, 0.15) ;
+  .li_cols:hover{
+    background: #ff9619;
+    color: #FFFFFF;
+  }
+}
+.li_cols{
+  font-family: 'Raleway',sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.1vw;
+  line-height: 185.5%;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  color: #343434;
 }
 .li_img{
 }
@@ -271,6 +336,12 @@ nav{
     }
   }
 }
+@media screen and (max-width:1400px){
+  ul.cols{
+    width:208px;
+  }
+
+}
 
 
 
@@ -378,5 +449,29 @@ nav{
     }
   }
 }
+.nav-items{
+  width: 15.5vw;
+  height: 43.4vw;
+  background-color: #FFFFFF;
+  li{
+    font-family: 'Raleway',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.1vw;
+    line-height: 135%;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
 
+    color: #4B4844;
+  }
+}
+.close {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1;
+  color: #343434;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 1;
+}
 </style>

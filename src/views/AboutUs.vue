@@ -3,7 +3,7 @@
       <div class="container_sec_2">
         <div class="history">
           <h2 class="p_history">
-            Наша история
+            <span>Н</span>аша история
           </h2>
         </div>
           <div class="first">
@@ -58,10 +58,11 @@
   line-height: 150%;
   /* or 52px */
   color: #343434;
+  span{
+    color: #FF9619;
+  }
 }
-.p_history:hover{
-  color: #FF9619;
-}
+
 .first{
   display: flex;
   flex-direction: row;
