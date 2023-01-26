@@ -71,6 +71,7 @@
              <a class="href" href="tel: +38 (099)-638-45-37"> <i class="fa-solid fa-phone font"> </i></a>
             </div>
             <div class="nav-menu">
+
               <transition name="fade" mode="out-in">
                     <i
                         class="material-icons menu-outlined"
@@ -353,7 +354,7 @@ nav{
 
 
 .mobile_list{
-  padding: 0.97vw 1.23vw;
+  padding: 2.9vw 3.23vw;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -374,6 +375,11 @@ nav{
 }
 .font{
   font-size: 15px;
+}
+.call{
+  a:hover{
+    color: #ff9619;
+  }
 }
 .language_mob{
   font-family: 'Raleway',sans-serif;
@@ -449,22 +455,47 @@ nav{
     }
   }
 }
+.nav-menu{
+  position: relative;
+}
 .nav-items{
-  width: 15.5vw;
+  display: flex;
   height: 43.4vw;
   background-color: #FFFFFF;
-  li{
-    font-family: 'Raleway',sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.1vw;
-    line-height: 135%;
-    list-style-type: none;
-    display: flex;
-    align-items: center;
+  position: absolute;
+  top: -10px;
+  padding: 0;
+  left: -160px;
+  transition: 1s transform cubic-bezier(0, 0, 0.14, 1);
+  flex-direction: column;
+  justify-content: center;
+}
+.ul_cat{
+  display: none;
+}
+.li_cat{
+   font-family: 'Raleway',sans-serif;
+   font-style: normal;
+   font-weight: 400;
+   font-size: 2.9vw;
+   line-height: 135%;
+   list-style-type: none;
+   display: flex;
+   align-items: center;
 
-    color: #4B4844;
-  }
+   color: #4B4844;
+ }
+.li_nav{
+  font-family: 'Raleway',sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.9vw;
+  line-height: 135%;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+
+  color: #4B4844;
 }
 .close {
   font-size: 1.5rem;
@@ -473,5 +504,8 @@ nav{
   color: #343434;
   text-shadow: 0 1px 0 #fff;
   opacity: 1;
+}
+.menu,.close{
+
 }
 </style>

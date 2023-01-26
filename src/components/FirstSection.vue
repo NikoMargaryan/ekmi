@@ -1,10 +1,11 @@
 <template>
-  <section class="main">
+  <section class="main" v-if="screenSize > 375">
+<!--    <div class="web_version" >-->
     <div class="container_section">
       <div class="flex_cont">
         <div class="flex_one">
           <div class="second_writing">
-            <p class="writing">ЛУЧШАЯ ЖИЗНЬ,
+            <p class="writing"><span>Л</span>УЧШАЯ ЖИЗНЬ,
               СОЗДАННАЯ ДЛЯ ВАС!</p>
           </div>
             <div class="button_first">
@@ -31,6 +32,33 @@
 
       </div>
     </div>
+<!--    </div>-->
+  </section>
+  <section class="mobile_first_sec" v-else>
+          <div class="flex_one_mob">
+            <div class="first_writing_mob">
+              <h2 class="h2_mob"><span>Л</span>УЧШАЯ ЖИЗНЬ СОЗДАННАЯ ДЛЯ ВАС!</h2>
+            </div>
+              <div class="slider_mob">
+                <agile :dots="true" :autoplay="true" :fade="true" :autoplaySpeed="2500" :mobileFirst="true" :navButtons="false"  >
+
+                  <div class="slide" v-for="img in imgs">
+                    <div class="png_sec_mob">
+                      <img class="png_image_mob" :src=img.pic alt="pictue">
+                    </div>
+                  </div>
+                </agile>
+              </div>
+                <div class="second_writing_mob">
+                  <h4 class="h4_mob">Основано в 1993 году</h4>
+                </div>
+                  <div class="button_first_mob">
+                    <button type="button" class="button_cat_mob" >
+                      перейти в КАталог
+                    </button>
+                  </div>
+          </div>
+
   </section>
 </template>
 
@@ -57,7 +85,15 @@ export default {
         {
           pic: "/assets/Leon2.png",
         }
-      ]
+      ],
+      screenSize: "",
+    }
+  },
+  mounted(){
+    this.screenSize= window.screen.width
+
+    window.onresize=()=>{
+      this.screenSize= window.screen.width
     }
   }
 
@@ -150,14 +186,17 @@ export default {
   font-weight: 600;
   font-size: 2.73vw;
   line-height: 110%;
-  color: #FF9619;
+  color: #FFFFFF;
+  span{
+    color: #FF9619;
+  }
 }
 .button_first{
   //sans-serif;
 }
 .button_cat{
 
-  background: #FF9619;
+  background: #5B5B5B;
   font-family: 'Raleway',sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -167,10 +206,11 @@ export default {
   padding:  0.9vw 1.4vw;
   text-transform: uppercase;
   color: #FFFFFF;
+  border: none;
 }
 .button_cat:hover{
-  background: #5B5B5B;
   color: #FFFFFF;
+  background: #FF9619;
 }
 .slider{
   width: 56.6vw;
@@ -245,26 +285,116 @@ export default {
     gap: 25px;
   }
 }
+@media screen and (max-width: 375px){
+  .agile{
+    width: 100vw;
+  }
+  .agile__track{
+    width: 100vw;
+  }
+  .png_image_mob{
+    width: 375px;
+    height: 303px;
+  }
+  .flex_one_mob{
+    gap: 60px;
+  }
+}
 
 
+
+//mobile version//
+.mobile_first_sec{
+  padding-bottom: 3.97vw;
+  background: #CCB2A3;
+}
+.agile {
+
+  .agile__actions {
+    margin: 2.5% 0 0 0;
+    .agile__dots {
+      gap: 1.65vw;
+      .agile__dot {
+        border: none;
+        border-radius: 50%;
+        background-color: #f2f3f5;
+
+        &--current {
+          background-color: #ff9619;
+          border-radius: 50%;
+        }
+
+        button {
+          padding: 1.15vw;
+          background-color: transparent;
+          border: none;
+          border-radius: 50%;
+
+        }
+      }
+
+    }
+
+  }
+}
+.slider_mob{
+  padding-top: 3.9vw;
+}
+
+.flex_one_mob{
+  display: flex;
+  flex-direction: column;
+  gap: 3.97vw;
+}
+.png_image_mob{
+  width: 100vw;
+  height: 100%;
+}
+.first_writing_mob{
+  padding: 4.97vw 0px 4.97vw 4.97vw;
+  width: 67.35vw;
+  height: 11.8vw;
+  .h2_mob{
+    font-family: 'Raleway',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 4.73vw;
+    line-height: 110%;
+    color: #FFFFFF;
+    span{
+      color: #FF9619;
+    }
+  }
+}
+.second_writing_mob{
+  text-align: center;
+  text-transform: capitalize;
+  .h4_mob{
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 4.3vw;
+    color: #FFFFFF;
+  }
+}
+.button_first_mob{
+  text-align: center;
+}
+.button_cat_mob{
+
+  background: #FF9619;
+  font-family: 'Raleway',sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  font-size: 4.3vw;
+  padding:  0.9vw 1.4vw;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  border: none;
+}
+.button_cat_mob:hover{
+  background: #5B5B5B;
+  color: #FFFFFF;
+}
 </style>
-
-
-
-
-
-
-
-
-
-//.main::before{
-//  z-index: -1;
-//  height: 79%;
-//  content: '';
-//  top: 0;
-//  left: 0;
-//  position: absolute;
-//}
-//max-height: 51.6vw;
-//height: 100%;
-//position: relative;

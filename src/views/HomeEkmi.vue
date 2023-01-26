@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-<!--    <first-section />-->
+    <first-section />
 <!--    <second-section />-->
   </div>
 </template>
