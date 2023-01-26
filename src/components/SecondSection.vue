@@ -1,5 +1,5 @@
 <template>
-  <section class="main_second">
+  <section class="main_second" v-if="screenSize > 375">
     <div class="container_second">
       <div class="new_slider">
         <div class="news">
@@ -25,6 +25,33 @@
             перейти в КАталог
           </button>
         </div>
+      </div>
+    </div>
+  </section>
+  <section class="second_section_mob" v-else>
+    <div class="new_slider_mob">
+      <div class="news_mob">
+        <h2 class="h2_news_mob"><span>Н</span>овинки</h2>
+      </div>
+      <div class="slider_middle_mob">
+        <div class="prev_mob"> <img src="/assets/Vector112.jpg" @click="$refs.carousel.goToPrev()" alt="previous picture"></div>
+        <agile ref="carousel"  :mobile-first="true" :autoplay="true" :pause-on-hover="true"  :autoplaySpeed="3000" :center-mode="true" :navButtons="false" :dots="false" >
+          <div class="slide" v-for="slider in sliders">
+            <div class="png_second_sec_mob">
+              <img class="png_img" :src="slider.img" alt="pictue">
+            </div>
+            <div class="slider_middle_cont_mob">
+              <h4>{{slider.name}}</h4>
+              <p>{{slider.price}} UAH</p>
+            </div>
+          </div>
+        </agile>
+        <div class="next_mob"> <img src="/assets/Vector17.jpg" @click="$refs.carousel.goToNext()" alt="next picture"></div>
+      </div>
+      <div class="button_second">
+        <button type="button" class="button_sec_mob" >
+          перейти в КАталог
+        </button>
       </div>
     </div>
   </section>
@@ -66,7 +93,8 @@ export default {
           name:"ALBA",
           price:"15000"
         }
-      ]
+      ],
+      screenSize: '',
     }
   }
 }
@@ -231,6 +259,28 @@ export default {
 @media screen and (max-width: 600px){
   .main_second .agile{
     padding-top: 40px;
+  }
+}
+
+
+
+//mobile version//
+
+
+.new_slider_mob{
+  padding-top: 20vw;
+}
+.news_mob{
+  padding-left: 3.97vw;
+}
+.h2_news_mob{
+  font-family: 'Raleway',sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  color: #343434;
+  font-size: 4.3vw;
+  span{
+    color: #ff9619;
   }
 }
 </style>

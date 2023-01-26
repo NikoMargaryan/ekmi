@@ -1,6 +1,5 @@
 <template>
   <section class="main" v-if="screenSize > 375">
-<!--    <div class="web_version" >-->
     <div class="container_section">
       <div class="flex_cont">
         <div class="flex_one">
@@ -348,7 +347,7 @@ export default {
   height: 100%;
 }
 .first_writing_mob{
-  padding: 4.97vw 0px 4.97vw 4.97vw;
+  padding: 4.97vw 0 4.97vw 4.97vw;
   width: 67.35vw;
   height: 11.8vw;
   .h2_mob{
@@ -367,7 +366,7 @@ export default {
   text-align: center;
   text-transform: capitalize;
   .h4_mob{
-    font-family: 'Raleway';
+    font-family: 'Raleway',sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 4.3vw;
@@ -376,6 +375,7 @@ export default {
 }
 .button_first_mob{
   text-align: center;
+  padding-bottom: 3.9vw;
 }
 .button_cat_mob{
 

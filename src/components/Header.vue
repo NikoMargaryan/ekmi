@@ -350,9 +350,13 @@ nav{
 
 //mobile version//
 
+//.material-icons open{
+//
+//}
 
+.close{
 
-
+}
 .mobile_list{
   padding: 2.9vw 3.23vw;
   display: flex;
@@ -505,7 +509,10 @@ nav{
   text-shadow: 0 1px 0 #fff;
   opacity: 1;
 }
-.menu,.close{
-
+.open{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 </style>
