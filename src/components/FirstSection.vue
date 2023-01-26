@@ -191,9 +191,6 @@ export default {
     color: #FF9619;
   }
 }
-.button_first{
-  //sans-serif;
-}
 .button_cat{
 
   background: #5B5B5B;
