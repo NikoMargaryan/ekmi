@@ -3,17 +3,18 @@
     <div class="web_version" v-if="screenSize > 375">
       <nav>
           <ul class="list-default">
-            <li class="cols"> <a class="href" href=""> Каталог</a> </li>
+            <li class="cols_hover"> <a class="href" href=""> Каталог</a>
               <ul class="ul_cols">
-                <li class="li_cols"><a class="href" href="">Диваны </a></li>
-                <li class="li_cols"><a class="href" href="">Кресла </a></li>
-                <li class="li_cols"><a class="href" href="">Стулья </a></li>
-                <li class="li_cols"><a class="href" href=""> Кровати </a></li>
-                <li class="li_cols"><a class="href" href="">Матрацы </a></li>
-                <li class="li_cols"><a class="href" href=""> Пуфы </a></li>
-                <li class="li_cols"><a class="href" href="">Эксклюзивная мебель </a></li>
-                <li class="li_cols"><a class="href" href="">2D-3D модели </a></li>
+                <li class="li_cols"><a class="href_li" href="">Диваны </a></li>
+                <li class="li_cols"><a class="href_li" href="">Кресла </a></li>
+                <li class="li_cols"><a class="href_li" href="">Стулья </a></li>
+                <li class="li_cols"><a class="href_li" href=""> Кровати </a></li>
+                <li class="li_cols"><a class="href_li" href="">Матрацы </a></li>
+                <li class="li_cols"><a class="href_li" href=""> Пуфы </a></li>
+                <li class="li_cols"><a class="href_li" href="">Эксклюзивная мебель </a></li>
+                <li class="li_cols"><a class="href_li" href="">2D-3D модели </a></li>
               </ul>
+            </li>
             <li class="cols"> <a class="href" href=""> Индивидуальная мебель </a>  </li>
             <li class="cols"> <a class="href" href=""> Контакты </a></li>
              <li class="li_img"> <router-link to="/"> <img class="li_img_head" src="../assets/telegram-cloud-document-2-5233443011957888024 1.png" alt="logo">  </router-link>  </li>
@@ -51,21 +52,24 @@
           </div>
           <div class="mob_second">
             <div class="mob_li">
-              <li class="language_mob" id="lang_mob" @click="show">
-                {{ currentLanguage }}
-                <label for="lang_mob">
-                  <span class="material-icons" :class="flip">keyboard_arrow_down</span>
-                </label>
-                <ul  class="lang-ul_mob" v-if="visible===true">
-                  <li class="lang-li_mob" @click="currentLanguage='RU'"><router-link
-                      to="/ru" class="lang-menu_mob">RU</router-link></li>
-                  <li class="lang-li_mob" @click="currentLanguage='UA'"><router-link
-                      to="/ua" class="lang-menu_mob">UA</router-link></li>
-                  <li class="lang-li_mob" @click="currentLanguage='EN'"><router-link
-                      to="/en" class="lang-menu_mob">EN</router-link></li>
-                </ul>
+              <ul>
+                <li class="language_mob" id="lang_mob" @click="show">
+                  {{ currentLanguage }}
+                  <label for="lang_mob">
+                    <span class="material-icons" :class="flip">keyboard_arrow_down</span>
+                  </label>
+                  <ul  class="lang-ul_mob" v-if="visible===true">
+                    <li class="lang-li_mob" @click="currentLanguage='RU'"><router-link
+                        to="/ru" class="lang-menu_mob">RU</router-link></li>
+                    <li class="lang-li_mob" @click="currentLanguage='UA'"><router-link
+                        to="/ua" class="lang-menu_mob">UA</router-link></li>
+                    <li class="lang-li_mob" @click="currentLanguage='EN'"><router-link
+                        to="/en" class="lang-menu_mob">EN</router-link></li>
+                  </ul>
 
-              </li>
+                </li>
+              </ul>
+
             </div>
             <div class="call">
              <a class="href" href="tel: +38 (099)-638-45-37"> <i class="fa-solid fa-phone font"> </i></a>
@@ -92,7 +96,7 @@
               </transition>
               <transition name="fade">
                 <ul v-if="showMenu" class="nav-items">
-                  <li class="li_nav">
+                  <li class="li_nav_hover">
                     Каталог
                     <ul class="ul_cat">
                       <li class="li_cat">Диваны</li>
@@ -108,7 +112,7 @@
                   <li class="li_nav">Индивидуальная мебель</li>
                   <li class="li_nav">2D-3D модели</li>
                   <li class="li_nav">Шоу-рум</li>
-                  <li class="li_nav">СТРАНИЦА ПАРТНЕРОВ ДИЗАЙНЕРОВ</li>
+                  <li class="li_nav">Стрфница партнеров дизайнеров</li>
                   <li class="li_nav">Дилерам</li>
                   <li class="li_nav">Контакты</li>
                 </ul>
@@ -155,6 +159,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.web_version{
+  padding-top: 1.7vw;
+}
 nav{
   margin: 0 auto;
   max-width: 81.25%;
@@ -168,23 +175,15 @@ nav{
   padding-left: 0;
   list-style-type: none;
 }
-.list-default:nth-child(1){
-  position: relative;
-}
-.list-default:nth-child(1):hover{
-  .ul_cols{
-    display: flex;
-    flex-direction: column;
-  }
-}
 .ul_cols{
   display: none;
   list-style-type: none;
   width: 13.5vw;
   position: absolute;
-  top: 47%;
+  top: 64%;
   left: 0;
-  padding-left: 0;
+  gap: 8px;
+  padding: 5px 0;
   background-color: #FFFFFF;
   box-shadow: 0 0 0.6vw 0.1vw rgba(0,0,0, 0.15) ;
   .li_cols:hover{
@@ -208,6 +207,25 @@ nav{
 .li_img_head{
   width: 15vw;
 }
+.cols_hover{
+  font-family: 'Raleway',sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.9vw;
+  line-height: 150%;
+  /* or 20px */
+
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  position: relative;
+}
+.cols_hover:hover{
+  .ul_cols{
+    display: flex;
+    flex-direction: column;
+  }
+}
 .cols{
   font-family: 'Raleway',sans-serif;
   font-style: normal;
@@ -221,6 +239,13 @@ nav{
   text-transform: uppercase;
 
 
+}
+.href_li{
+  color: #343434;
+  padding-left: 10px;
+}
+.href_li:hover{
+  text-decoration: none;
 }
 .href{
   color: #343434;
@@ -260,10 +285,13 @@ nav{
     color: rgba(52, 52, 52, 0.8);
     font-size:1.57vw;
     transition:all 0.3s ease;
+    position: absolute;
+    top: -0.8vw;
   }
 
   label{
     margin:0;
+    position: relative;
 
     .flip{
       transform:rotateX(180deg);
@@ -350,13 +378,12 @@ nav{
 
 //mobile version//
 
-//.material-icons open{
-//
-//}
 
-.close{
 
+.mobile_version{
+  width: 100VW;
 }
+
 .mobile_list{
   padding: 2.9vw 3.23vw;
   display: flex;
@@ -378,11 +405,16 @@ nav{
   height: 6.2vw;
 }
 .font{
-  font-size: 15px;
+  font-size: 4vw;
 }
 .call{
   a:hover{
     color: #ff9619;
+  }
+}
+.mob_li{
+  ul{
+    margin: 0;
   }
 }
 .language_mob{
@@ -402,11 +434,14 @@ nav{
     color: rgba(52, 52, 52, 0.8);
     font-size: 4.1vw;
     transition:all 0.3s ease;
+    position: relative;
   }
 
   label{
     margin:0;
-
+    position: absolute;
+    top: -0.6vw;
+    left: 2.5vw;
     .flip{
       transform:rotateX(180deg);
     }
@@ -464,18 +499,21 @@ nav{
 }
 .nav-items{
   display: flex;
-  height: 43.4vw;
   background-color: #FFFFFF;
   position: absolute;
-  top: -10px;
-  padding: 0;
-  left: -160px;
-  transition: 1s transform cubic-bezier(0, 0, 0.14, 1);
+  top: -6.62vw;
+  z-index: 2;
+  padding: 3vw 0 3vw 2vw;
+  left: -48.5vw;
+  transition: 1s transform ease;
   flex-direction: column;
   justify-content: center;
+  gap: 3vw;
 }
 .ul_cat{
   display: none;
+  padding:  1vw 0;
+  gap: 1vw;
 }
 .li_cat{
    font-family: 'Raleway',sans-serif;
@@ -489,6 +527,9 @@ nav{
 
    color: #4B4844;
  }
+.li_cat:hover{
+  color: #ff9619;
+}
 .li_nav{
   font-family: 'Raleway',sans-serif;
   font-style: normal;
@@ -496,23 +537,51 @@ nav{
   font-size: 2.9vw;
   line-height: 135%;
   list-style-type: none;
-  display: flex;
-  align-items: center;
-
+  width: 82%;
   color: #4B4844;
 }
-.close {
-  font-size: 1.5rem;
+.li_nav_hover{
+  font-family: 'Raleway',sans-serif;
+  font-style: normal;
   font-weight: 400;
+  font-size: 2.9vw;
+  line-height: 135%;
+  list-style-type: none;
+  width: 82%;
+  position: relative;
+  color: #4B4844;
+}
+.li_nav_hover:hover{
+  .ul_cat{
+    display: flex;
+    flex-direction: column;
+  }
+}
+.li_nav:hover{
+  color: #ff9619;
+}
+.close {
+  font-size: 6vw;
+  font-weight: 100;
   line-height: 1;
   color: #343434;
   text-shadow: 0 1px 0 #fff;
   opacity: 1;
+
 }
-.open{
+.menu-outlined{
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
+  top: -24px;
+  left: -22px;
+  z-index: 3;
+}
+@media screen and (max-width: 375px){
+ .mob_first{
+   width: 187.5px;
+ }
+  .mob_second{
+   width: 187.5px;
+ }
+
 }
 </style>

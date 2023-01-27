@@ -105,7 +105,7 @@
    position: relative;
  }
  .box::before{
-   background-image: url("../assets/Босфор1.png");
+   background-image: url("../../public/assets/Босфор1.png");
    content: "";
    position: absolute;
    width: 52.08vw;

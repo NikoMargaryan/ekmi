@@ -98,8 +98,9 @@ export default {
 
 }
 </script>
-<!--media="screen"-->
-<style lang="scss" >
+
+
+<style lang="scss">
 
 .main .agile {
 
@@ -191,8 +192,7 @@ export default {
   }
 }
 .button_cat{
-
-  background: #5B5B5B;
+  background: #FF9619;
   font-family: 'Raleway',sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -206,7 +206,7 @@ export default {
 }
 .button_cat:hover{
   color: #FFFFFF;
-  background: #FF9619;
+  background: #5B5B5B;
 }
 .slider{
   width: 56.6vw;
@@ -286,7 +286,7 @@ export default {
     width: 100vw;
   }
   .agile__track{
-    width: 100vw;
+    //width: 100vw;
   }
   .png_image_mob{
     width: 375px;
