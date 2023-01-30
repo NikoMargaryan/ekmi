@@ -31,7 +31,10 @@
 
         </div>
         <div class="call_icon">
-          <a class="href_mob" href="tel: +38 (099)-638-45-37"><i class="material-icons call">call </i></a>
+          <a class="href_mob" href="tel: +38 (099)-638-45-37">
+            <span class="material-icons">call
+            </span>
+          </a>
         </div>
         <div class="nav-menu">
 
@@ -39,7 +42,7 @@
             <i
                 class="material-icons menu-outlined"
                 v-if="showMenu"
-                @click="showMenu= !showMenu"
+                @click="showMen"
                 :key="menu"
             >
               close
@@ -47,14 +50,14 @@
             <i
                 class="material-icons close"
                 v-else
-                @click="showMenu= !showMenu"
+                @click="showMen"
                 :key="close"
             >
               menu
             </i>
           </transition>
           <transition name="fade">
-            <ul v-if="showMenu" class="nav-items">
+            <ul :class="isMenuOpened" class="nav-items">
               <li class="li_nav_hover">
                 Каталог
                 <ul class="ul_cat">
@@ -71,7 +74,7 @@
               <li class="li_nav">Индивидуальная мебель</li>
               <li class="li_nav">2D-3D модели</li>
               <li class="li_nav">Шоу-рум</li>
-              <li class="li_nav">Стрфница партнеров дизайнеров</li>
+              <li class="li_nav">Страница партнеров дизайнеров</li>
               <li class="li_nav">Дилерам</li>
               <li class="li_nav">Контакты</li>
             </ul>
@@ -93,6 +96,7 @@ export default {
       showMenu: false,
       close:'',
       menu:'',
+      isMenuOpened: '',
     }
   },
   methods:{
@@ -104,6 +108,14 @@ export default {
         this.flip=''
       }
     },
+    showMen() {
+      this.showMenu = !this.showMenu
+      if(this.showMenu == true){
+        this.isMenuOpened = 'opened'
+      }else{
+        this.isMenuOpened = ''
+      }
+    }
   },
 }
 </script>
@@ -131,21 +143,28 @@ export default {
   justify-content: space-between;
 }
 .mob_png{
-  width: 13.99vw;
-  height: 6.2vw;
+  width: 20vw;
+  height: 10vw;
 }
 .font{
   font-size: 4vw;
 }
 .call_icon{
   a{
-    color: black;
+    display: flex;
+    text-decoration: none;
+    .material-icons{
+      font-size: 6vw;
+      -webkit-text-stroke: 1px rgb(10, 10, 10);
+      color: rgb(255, 255, 255);
+    }
   }
-  a:hover{
-    color: #ff9619;
-  }
-  .call{
-  font-size: 5vw;
+}
+.call_icon:hover{
+  a{
+    span{
+      -webkit-text-stroke: 1px #ff9619;
+    }
   }
 }
 .mob_li{
@@ -158,7 +177,7 @@ export default {
   font-family: 'Raleway',sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 2.3vw;
+  font-size: 3.3vw;
   line-height: 150%;
   display: flex;
   align-items: center;
@@ -169,7 +188,7 @@ export default {
 
 span{
   color: rgba(52, 52, 52, 0.8);
-  font-size: 4.1vw;
+  font-size: 6.1vw;
   transition:all 0.3s ease;
   position: relative;
 }
@@ -177,11 +196,11 @@ span{
 label{
   margin:0;
   position: absolute;
-  top: -0.6vw;
-  left: 2.5vw;
-.flip{
-  transform:rotateX(180deg);
-}
+  top: -0.9vw;
+  left: 3.5vw;
+  .flip{
+    transform:rotateX(180deg);
+  }
 }
 span:hover{
   cursor:pointer;
@@ -193,7 +212,7 @@ span:hover{
   position:absolute;
   top: 85%;
 
-  width: 5.1vw;
+  width: 7vw;
   padding-left:0;
 
   background: #FFFFFF;
@@ -206,7 +225,7 @@ span:hover{
   font-family: 'Raleway',sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 2.3vw;
+  font-size: 4.3vw;
   line-height: 150%;
   /* or 21px */
 
@@ -217,16 +236,16 @@ span:hover{
 
   color: rgba(52, 52, 52, 0.7);
 
-.lang-menu_mob{
-  font-size:2.3vw;
-  color: rgba(52, 52, 52, 0.7);
-  text-decoration: none;
-}
+  .lang-menu_mob{
+    font-size: 3.3vw;
+    color: rgba(52, 52, 52, 0.7);
+    text-decoration: none;
+  }
 }
 
-.lang-menu_mob:hover{
-  color: #FF9619;
-}
+  .lang-menu_mob:hover{
+    color: #FF9619;
+  }
 }
 }
 .nav-menu{
@@ -236,14 +255,19 @@ span:hover{
   display: flex;
   background-color: #FFFFFF;
   position: absolute;
+  height: 100vw;
+  width: 51vw;
   top: -6.62vw;
   z-index: 2;
-  padding: 3vw 0 3vw 2vw;
+  padding: 6vw 0 3vw 5vw;
   left: -48.5vw;
-  transition: 1s transform ease;
+  transform: translateX(120%);
+  transition: 1s transform cubic-bezier(0.69, 0.24, 0.59, 0.81);
   flex-direction: column;
-  justify-content: center;
   gap: 3vw;
+}
+.opened{
+  transform: translateX(3%);
 }
 .ul_cat{
   display: none;
@@ -297,7 +321,9 @@ span:hover{
   color: #ff9619;
 }
 .close {
-  font-size: 6vw;
+  position: relative;
+  z-index: 3;
+  font-size: 8vw;
   font-weight: 100;
   line-height: 1;
   color: #343434;
@@ -305,12 +331,13 @@ span:hover{
   opacity: 1;
 
 }
+
 .menu-outlined{
   position: absolute;
-  top: -5vw;
-  left: -8vw;
+  top: -2vw;
+  left: -7vw;
   z-index: 3;
-  font-size: 7vw;
+  font-size: 8vw;
 }
 @media screen and (max-width: 375px){
   .mob_first{

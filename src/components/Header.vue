@@ -28,13 +28,13 @@
               </label>
               <ul  class="lang-ul" v-if="visible===true">
                 <li class="lang-li" @click="currentLanguage='RU'">
-                  <router-link to="/ru" class="lang-menu">RU</router-link>
+                  <a href="#"  class="lang-menu">RU</a>
                 </li>
                 <li class="lang-li" @click="currentLanguage='UA'">
-                  <router-link to="/ua" class="lang-menu">UA</router-link>
+                  <a href="#" class="lang-menu">UA</a>
                 </li>
                 <li class="lang-li" @click="currentLanguage='EN'">
-                  <router-link to="/en" class="lang-menu">EN</router-link>
+                  <a href="#" class="lang-menu">EN</a>
                 </li>
               </ul>
 
@@ -245,6 +245,7 @@ nav{
       flex-wrap: nowrap;
       justify-content: space-around;
 
+
       color: rgba(52, 52, 52, 0.7);
 
       .lang-menu{
@@ -256,6 +257,7 @@ nav{
     .lang-li:hover{
       .lang-menu{
         color: #FF9619;
+        text-decoration: none;
       }
     }
   }

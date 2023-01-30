@@ -6,7 +6,7 @@
       </h2>
     </div>
     <div class="first_mob">
-      <div class="box_mob">
+      <div class="box_mob" >
         <div class="div_1_mob">
           <h3 class="h_box_mob">
             Наработки длинной в 25 лет
@@ -43,7 +43,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .history{
   padding: 9vw 0;
 }
@@ -75,17 +75,17 @@ export default {
   background-image: url("../../public/assets/Босфор1.png");
   content: "";
   position: absolute;
-  width: 91.08vw;
-  height: 53.35vw;
+  width: 90vw;
+  height: 61vw;
   z-index: 1;
-  top: 50.7vw;
+  top: 48.7vw;
   left: 4.08vw;
   background-size: cover;
 }
 .box_mob::after{
   content: "";
   position: absolute;
-  top: 46.4vw;
+  top: 44.4vw;
   left: 88vw;
   z-index: 10;
   width: 12vw;
@@ -139,4 +139,6 @@ export default {
   line-height: 127.5%;
   color: #343434;
 }
+
+
 </style>

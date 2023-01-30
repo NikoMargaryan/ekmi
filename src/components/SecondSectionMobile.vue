@@ -57,31 +57,31 @@ export default {
         {
           img:"/assets/IMG_3505-готовый.png",
           name:"ALBA",
-          price:"15000",
+          price:"15 000",
           // index: 0
         },
         {
           img:"/assets/image4.png",
           name:"MARTIN",
-          price:"15000",
+          price:"15 000",
           // index: 1
         },
         {
           img:"/assets/732.png",
           name:"LUARA",
-          price:"15000",
+          price:"15 000",
           // index: 2
         },
         {
           img:"/assets/image 41.png",
           name:"TOSCANA",
-          price:"15000",
+          price:"15 000",
           // index: 3
         },
         {
           img:"/assets/image 15.png",
           name:"ALBA",
-          price:"15000",
+          price:"15 000",
           // index: 4
         }
       ],
@@ -144,6 +144,7 @@ export default {
 }
 .png_second_sec_mob{
   background-color: #f2f3f5;
+  text-align: center;
 }
 .png_img_mob{
   width: 70vw;

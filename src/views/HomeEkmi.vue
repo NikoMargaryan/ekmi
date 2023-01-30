@@ -1,9 +1,9 @@
 <template>
   <div class="home">
     <first-section v-if="screenSize > 375" />
-    <FirstSectionMobile v-else-if="screenSize <= 375"/>
-    <second-section v-else-if="screenSize > 375" />
-    <SecondSectionMobile v-else-if="screenSize <= 375"/>
+    <FirstSectionMobile v-else/>
+    <second-section v-if="screenSize > 375" />
+    <SecondSectionMobile v-else/>
     <history v-if="screenSize <= 375" />
   </div>
 </template>
@@ -27,10 +27,10 @@ export default {
     }
   },
   mounted(){
-    this.screenSize= window.screen.width
+    this.screenSize = window.screen.width
 
     window.onresize=()=>{
-      this.screenSize= window.screen.width
+      this.screenSize = window.screen.width
     }
   }
 }

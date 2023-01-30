@@ -33,6 +33,7 @@ export default {
 
 <style lang="scss">
 #app {
+  overflow-x: hidden;
 }
 
 </style>
