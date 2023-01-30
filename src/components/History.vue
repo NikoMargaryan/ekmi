@@ -20,16 +20,18 @@
       </div>
     </div>
     <div class="second_mob">
-      <div class="sec_flex"_mob>
-        <div>
+      <div class="sec_flex_mob">
+        <div class="year">
           <p class="p_big_mob">25 лет </p>
         </div>
-          <div>
+        <div class="date_main">
+          <div class="date_mob">
             <p class="p_sec_mob">1993</p>
           </div>
-          <div>
+          <div class="date_mob">
             <p class="p_sec_mob">2021</p>
           </div>
+        </div>
       </div>
     </div>
 </div>
@@ -76,24 +78,25 @@ export default {
   width: 91.08vw;
   height: 53.35vw;
   z-index: 1;
-  top: 46.71vw;
+  top: 50.7vw;
   left: 4.08vw;
   background-size: cover;
 }
 .box_mob::after{
   content: "";
   position: absolute;
-  top: 14.32vw;
-  left: 23.95vw;
-  width: 6.57vw;
-  height: 3.58vw;
+  top: 46.4vw;
+  left: 88vw;
+  z-index: 10;
+  width: 12vw;
+  height: 12vw;
   background-color: #FF9619;
 }
 .div_1_mob{
   width: 79%;
 }
 .div_2_mob{
-  width: 79%;
+  width: 87%;
 }
 .h_box_mob{
   font-family: 'Raleway',sans-serif;
@@ -110,5 +113,30 @@ export default {
   font-size: 3.8vw;
   line-height: 135%;
   color: #FFFFFF;
+}
+.sec_flex_mob{
+  padding: 60vw 3.97vw 0 3.97vw;
+}
+.date_main{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 97%;
+}
+.p_big_mob{
+  font-family: 'Raleway',sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30vw;
+  line-height: 150%;
+  color: rgba(52, 52, 52, 0.1);;
+}
+.p_sec_mob{
+  font-family: 'Raleway',sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 4.3vw;
+  line-height: 127.5%;
+  color: #343434;
 }
 </style>

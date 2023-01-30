@@ -1,13 +1,25 @@
 <template>
-  <section class="main_second" v-if="screenSize > 375">
+  <section class="main_second">
     <div class="container_second">
       <div class="new_slider">
         <div class="news">
           <h2><span>Н</span>овинки</h2>
         </div>
         <div class="slider_middle">
-          <div class="prev"> <img src="/assets/Vector112.jpg" @click="$refs.carousel.goToPrev()" alt="previous picture"></div>
-            <agile ref="carousel"  :mobile-first="true" :autoplay="true" :pause-on-hover="true"  :autoplaySpeed="3000" :center-mode="true" :navButtons="false" :dots="false"  :slides-to-show="3">
+          <div class="prev">
+            <img src="../../public/assets/Vector112.jpg" @click="$refs.carousel.goToPrev()" alt="previous picture">
+          </div>
+            <agile
+              ref="carousel"
+               :mobile-first="true"
+               :autoplay="true"
+               :pause-on-hover="true"
+               :autoplaySpeed="3000"
+               :center-mode="true"
+               :navButtons="false"
+               :dots="false"
+               :slides-to-show="3"
+            >
               <div class="slide" v-for="slider in sliders">
                 <div class="png_second_sec">
                   <img class="png_img" :src="slider.img" alt="pictue">
@@ -18,56 +30,14 @@
                 </div>
               </div>
             </agile>
-          <div class="next"> <img src="/assets/Vector17.jpg" @click="$refs.carousel.goToNext()" alt="next picture"></div>
-        </div>
+          <div class="next">
+            <img src="../../public/assets/Vector17.jpg" @click="$refs.carousel.goToNext()" alt="next picture"></div>
+          </div>
         <div class="button_second">
           <button type="button" class="button_sec" >
             перейти в КАталог
           </button>
         </div>
-      </div>
-    </div>
-  </section>
-  <section class="second_section_mob" v-else>
-    <div class="new_slider_mob">
-      <div class="news_mob">
-        <h2 class="h2_news_mob"><span>Н</span>овинки</h2>
-      </div>
-      <div class="slider_middle_mob">
-        <div class="prev_mob"> <img src="../../public/assets/Vector112.jpg" @click="$refs.carousel.goToPrev()" alt="previous picture"></div>
-        <agile ref="carousel" :autoplay="true"  :mobile-first="true"  :pause-on-hover="true"  :autoplaySpeed="3000" :center-mode="true" :navButtons="false" :dots="false" >
-          <div class="slide" v-for="(slider,index) in sliders" :key="index">
-            <div class="png_second_sec_mob">
-              <img class="png_img_mob" :src="slider.img" alt="picture">
-            </div>
-            <div class="slider_middle_cont_mob">
-              <h4>{{slider.name}}</h4>
-              <p>{{slider.price}} UAH</p>
-            </div>
-          </div>
-        </agile>
-        <div class="next_mob"> <img src="../../public/assets/Vector17.jpg" @click="$refs.carousel.goToNext()" alt="next picture"></div>
-      </div>
-      <div class="slider_middle_mob">
-<!--        -->
-        <div class="prev_mob"> <img src="../../public/assets/Vector112.jpg" @click="$refs.carousel1.goToPrev()" alt="previous picture"></div>
-        <agile ref="carousel1"  :autoplay="true" :mobile-first="true"  :pause-on-hover="true"  :autoplaySpeed="3000" :center-mode="true" :navButtons="false" :dots="false" >
-          <div class="slide" v-for="(slider,index) in [sliders[1],...sliders]" :key="index">
-            <div class="png_second_sec_mob">
-              <img class="png_img_mob" :src="slider.img" alt="picture">
-            </div>
-            <div class="slider_middle_cont_mob">
-              <h4>{{slider.name}}</h4>
-              <p>{{slider.price}} UAH</p>
-            </div>
-          </div>
-        </agile>
-        <div class="next_mob"> <img src="../../public/assets/Vector17.jpg" @click="$refs.carousel1.goToNext()" alt="next picture"></div>
-      </div>
-      <div class="button_second_mob">
-        <button type="button" class="button_sec_mob" >
-          перейти в КАталог
-        </button>
       </div>
     </div>
   </section>
@@ -115,20 +85,12 @@ export default {
           // index: 4
         }
       ],
-      screenSize: '',
-    }
-  },
-  mounted(){
-    this.screenSize= window.screen.width
-
-    window.onresize=()=>{
-      this.screenSize= window.screen.width
     }
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .main_second .agile{
   max-width: 69.01vw;
   padding-top: 3.97vw;
@@ -215,7 +177,7 @@ export default {
   font-style: normal;
   font-weight: 700;
   line-height: 150%;
-  /* or 24px */
+  border: none;
   font-size: 1.04vw;
   padding:  0.9vw 1.4vw;
   text-transform: uppercase;
@@ -287,114 +249,6 @@ export default {
 @media screen and (max-width: 600px){
   .main_second .agile{
     padding-top: 40px;
-  }
-}
-
-
-
-//mobile version//
-
-.second_section_mob{
-  width: 100vw;
-}
-.new_slider_mob{
-  padding-top: 20vw;
-  .agile{
-    width: 75vw;
-    .agile__track{
-      width: 75vw;
-    }
-    .agile--no-nav-buttons{
-    width: 75vw;
-  }
-}
-
-}
-.news_mob{
-  padding-left: 3.97vw;
-}
-.h2_news_mob{
-  font-family: 'Raleway',sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  color: #343434;
-  font-size: 4.3vw;
-  span{
-    color: #ff9619;
-  }
-}
-.slider_middle_mob{
-  padding: 5.2vw 5.9vw;
-  display: flex;
-  align-items: center
-}
-.prev_mob{
-  padding-bottom: 25vw;
-  padding-right: 3vw;
-  img{
-    width: 3.8vw;
-    height: 4.5vw;
-  }
-}
-.next_mob{
-  padding-bottom: 25vw;
-  padding-left: 3vw;
-  img{
-    width: 3.8vw;
-    height: 4.5vw;
-  }
-
-}
-.png_second_sec_mob{
-  background-color: #f2f3f5;
-}
-.png_img_mob{
-  width: 70vw;
-  height: 74vw;
-  mix-blend-mode: multiply;
-}
-.slider_middle_cont_mob{
-  padding-top: 2vw;
-  text-align: center;
-  h4{
-    font-family: 'Raleway',sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 4.3vw;
-    color: #343434;
-  }
-  p{
-    font-family: 'Open Sans',sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 4.3vw;
-    color: #ff9619;
-  }
-}
-.button_second_mob{
-  text-align: center;
-  padding-bottom: 3.9vw;
-}
-.button_sec_mob{
-
-  background: #FF9619;
-  font-family: 'Raleway',sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 150%;
-  font-size: 4.3vw;
-  padding:  0.9vw 1.4vw;
-  text-transform: uppercase;
-  color: #FFFFFF;
-  border: none;
-}
-.button_sec_mob:hover{
-  background: #5B5B5B;
-  color: #FFFFFF;
-}
-@media screen and (max-width: 375px){
-  .slider_middle_mob{
-    padding: 11.5px 13.07px;
   }
 }
 </style>

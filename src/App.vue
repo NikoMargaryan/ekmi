@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <Header />
+    <Header   v-if="screenSize > 375"/>
+    <HeaderMobile v-else/>
     <router-view />
   </div>
 </template>
@@ -11,9 +12,22 @@
 
 <script>
 import Header from "@/components/Header";
+import HeaderMobile from "@/components/HeaderMobile";
 
 export default {
-  components: { Header }
+  components: {HeaderMobile, Header },
+  data(){
+    return{
+      screenSize: '',
+    }
+  },
+  mounted(){
+    this.screenSize= window.screen.width
+
+    window.onresize=()=>{
+      this.screenSize= window.screen.width
+    }
+  }
 }
 </script>
 

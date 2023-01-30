@@ -2,7 +2,6 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import responsive from 'vue-responsive'
 import VueAgile from 'vue-agile'
 
 Vue.use(VueAgile)
@@ -18,7 +17,6 @@ Vue.component('ssr-carousel')
 Vue.config.productionTip = false
 
 new Vue({
-  responsive,
   router,
   store,
   render: function (h) { return h(App) }
