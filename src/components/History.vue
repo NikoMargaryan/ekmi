@@ -1,5 +1,5 @@
 <template>
-<div class="history">
+<div class="history_main">
     <div class="history_mob">
       <h2 class="p_history_mob">
         <span>Н</span>аша история
@@ -44,7 +44,7 @@ export default {
 </script>
 
 <style lang="scss">
-.history{
+.history_main{
   padding: 9vw 0;
 }
 .first_mob{

@@ -17,7 +17,7 @@
             </li>
             <li class="cols"> <a class="href" href=""> Индивидуальная мебель </a>  </li>
             <li class="cols"> <a class="href" href=""> Контакты </a></li>
-             <li class="li_img"> <router-link to="/"> <img class="li_img_head" src="../assets/telegram-cloud-document-2-5233443011957888024 1.png" alt="logo">  </router-link>  </li>
+             <li class="li_img"> <router-link to="/"> <img class="li_img_head" src="../../public/assets/telegram-cloud-document-2-5233443011957888024 1.svg" alt="logo">  </router-link>  </li>
             <li class="cols"> <router-link class="href" to="/about"> О компании </router-link>   </li>
             <li class="cols_num"> <a class="href" href="tel: +38 (099)-638-45-37"> +38 (099)-638-45-37 </a> </li>
 

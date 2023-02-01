@@ -2,7 +2,7 @@
   <div id="app">
     <Header   v-if="screenSize > 375"/>
     <HeaderMobile v-else/>
-    <router-view />
+    <router-view :screenSize="screenSize"/>
   </div>
 </template>
 

@@ -201,10 +201,4 @@
      padding-top: 310px;
    }
  }
- //@media screen and (max-width: 1300px){
- //  .box::after{
- //    position:absolute;
- //
- //  }
- //}
  </style>

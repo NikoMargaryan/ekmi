@@ -3,7 +3,7 @@
     <div class="mobile_list">
       <div class="mob_first">
         <div class="mob_first_img">
-          <router-link to="/"><img class="mob_png" src="../../public/assets/telegram-cloud-document-2-5233443011957888024 3.png" alt="logo"> </router-link>
+          <router-link to="/"><img class="mob_png" src="../../public/assets/telegram-cloud-document-2-5233443011957888024 3.svg" alt="logo"> </router-link>
         </div>
       </div>
       <div class="mob_second">
@@ -110,7 +110,7 @@ export default {
     },
     showMen() {
       this.showMenu = !this.showMenu
-      if(this.showMenu == true){
+      if(this.showMenu === true){
         this.isMenuOpened = 'opened'
       }else{
         this.isMenuOpened = ''

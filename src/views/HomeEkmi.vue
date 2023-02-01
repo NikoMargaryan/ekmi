@@ -26,12 +26,17 @@ export default {
       screenSize: '',
     }
   },
-  mounted(){
-    this.screenSize = window.screen.width
-
-    window.onresize=()=>{
-      this.screenSize = window.screen.width
+  props:{
+    screenSize: {
+      type: Number
     }
   }
+  // mounted(){
+  //   this.screenSize = window.screen.width
+  //
+  //   window.onresize=()=>{
+  //     this.screenSize = window.screen.width
+  //   }
+  // }
 }
 </script>
